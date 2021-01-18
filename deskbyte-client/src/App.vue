@@ -26,11 +26,15 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-
+  // text-align: center;
 }
 
-
+.router-view {
+  margin: 1rem 10rem 1rem 10rem;
+  display: flex;
+  justify-content: center;
+  // border: 1px dotted blue;
+}
 
 #nav {
   padding: 30px;

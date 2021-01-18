@@ -24,7 +24,7 @@ export default defineComponent({
   justify-content: space-between;
   align-items: center;
   background-color: $db-navy;
-  height: 10vh;
+  height: 6vh;
   padding: 0.7rem 2rem 0.7rem 2rem;
 }
 .logo {
