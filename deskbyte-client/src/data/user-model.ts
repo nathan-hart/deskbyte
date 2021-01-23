@@ -1,7 +1,7 @@
-export interface Byte {
+export interface User {
   name: String,
   images: String[],
-  upvotes: Number,
+  upvotes: {},
   desctags: String[],
   equipment: String[],
   comments: String[],

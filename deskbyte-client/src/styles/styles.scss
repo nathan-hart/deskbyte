@@ -1,7 +1,11 @@
 @import "./variables";
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
-body {
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap");
+
+html {
   font-size: 14px;
+}
+
+body {
   margin: 0px;
   color: #2c3e50;
   background-color: $background-main;
@@ -9,13 +13,15 @@ body {
 
 h1 {
   color: $db-navy-text;
+  font-size: 2rem;
   font-family: "Jost", sans-serif;
-  margin: 1rem 1rem 1rem 1rem; // to delete and style locally
+  // margin: 1rem 1rem 1rem 1rem; // to delete and style locally
 }
 
 h2 {
   color: $db-navy-text;
   font-family: "Jost", sans-serif;
+  font-size: 1.7rem;
 }
 
 h3 {
@@ -51,9 +57,9 @@ a {
   color: #42b983;
 }
 
-button {
-  border: 1px solid $border-main;
-  border-radius: 3px;
-  padding: 1rem;
-  background-color: cornflowerblue;
-}
+// button {
+//   border: 1px solid $border-main;
+//   border-radius: 3px;
+//   padding: 1rem;
+//   background-color: cornflowerblue;
+// }

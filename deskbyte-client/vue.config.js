@@ -1,7 +1,10 @@
 module.exports = {
   devServer: {
-    host: "http://localhost:8080",
+    disableHostCheck: true,
+    port: 8000,
+    public: "0.0.0.0:8000",
   },
+  publicPath: "/",
   css: {
     loaderOptions: {
       sass: {
