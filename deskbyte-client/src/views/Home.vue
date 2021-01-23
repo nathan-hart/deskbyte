@@ -12,13 +12,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// import Byte from "../components/Byte.vue"; // @ is an alias to /src
 
 export default defineComponent({
   name: "Home",
-  // components: {
-  //   Byte
-  // }
 });
 </script>
 

@@ -5,6 +5,9 @@
       <router-link to="/about">About</router-link> -->
     <div class="router-view">
       <router-view />
+      <!-- <div class="test-div">
+        <p>test</p>
+      </div> -->
     </div>
   </div>
 </template>
@@ -30,10 +33,12 @@ export default defineComponent({
 }
 
 .router-view {
-  margin: 1rem 10rem 1rem 10rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  margin: 1rem 1rem 1rem 1rem;
   // border: 1px dotted blue;
+
 }
 
 #nav {
@@ -48,4 +53,5 @@ export default defineComponent({
     }
   }
 }
+
 </style>

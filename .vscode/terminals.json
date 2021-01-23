@@ -1,0 +1,31 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Root Project",
+      "description": "A terminal that runs some commands",
+      "icon": "code",
+      "cwd": "C:/Users/natan.h/Desktop/Coding/deskbyte",
+      "recycle": false,
+      "open": true,
+      "focus": true,
+      "shellArgs": ["--foo"],
+      "command": "git push origin main",
+      "execute": false,
+      "env": { "name": "value" },
+      "envInherit": false
+    },
+    {
+      "name": "Client 8080",
+      "cwd": "C:/Users/natan.h/Desktop/Coding/deskbyte/deskbyte-client",
+      "execute": false,
+      "command": "npm run serve"
+    },
+    {
+      "name": "Server 4000",
+      "cwd": "C:/Users/natan.h/Desktop/Coding/deskbyte/server",
+      "command": "nodemon server.js",
+      "execute": false
+    }
+  ]
+}
