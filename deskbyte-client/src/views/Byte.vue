@@ -248,31 +248,38 @@ export default defineComponent({
       transition: $animation;
       height: 1.3rem;
       background-color: rgb(240, 80, 80);
-      border-radius: 0px 8px 8px 0px;
+      background-color: $db-navy-text;
+      border-radius: 0px 3px 3px 0px;
     }
     #cool {
       width: var(--widthCool);
       background-color: rgb(52, 65, 179);
+      background-color: $db-navy-text;
     }
     #clean {
       width: var(--widthClean);
       background-color: rgb(134, 134, 134);
+      background-color: $db-navy-text;
     }
     #creative {
       width: var(--widthCreative);
       background-color: rgb(80, 208, 240);
+      background-color: $db-navy-text;
     }
     #original {
       width: var(--widthOriginal);
       background-color: rgb(240, 80, 205);
+      background-color: $db-navy-text;
     }
     #productive {
       width: var(--widthProductive);
       background-color: rgb(80, 240, 93);
+      background-color: $db-navy-text;
     }
     #wow {
       width: var(--widthWow);
       background-color: rgb(240, 80, 80);
+      background-color: $db-navy-text;
     }
   }
   .vote-count {
