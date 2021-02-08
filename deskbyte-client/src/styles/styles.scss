@@ -5,6 +5,12 @@ html {
   font-size: 14px;
 }
 
+@media only screen and (max-width: 1300px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 body {
   margin: 0px;
   color: #2c3e50;
@@ -15,19 +21,23 @@ h1 {
   color: $db-navy-text;
   font-size: 2rem;
   font-family: "Jost", sans-serif;
+  font-weight: 300;
   // margin: 1rem 1rem 1rem 1rem; // to delete and style locally
 }
 
 h2 {
-  color: $db-navy-text;
+  color: $db-orange;
   font-family: "Jost", sans-serif;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  margin: 0 2px;
+  font-weight: 300;
 }
 
 h3 {
   font-family: "Jost", sans-serif;
   color: $db-orange;
   font-size: 1.3rem;
+  font-weight: 300;
 }
 
 h4 {
@@ -36,8 +46,9 @@ h4 {
 p {
   font-family: "Jost", sans-serif;
   color: $db-orange;
-  font-size: 1rem;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin: 0 2px;
+  // text-transform: uppercase;
 }
 
 ul {
@@ -46,11 +57,11 @@ ul {
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 2px;
   font-family: "Jost", sans-serif;
   color: $db-navy-text;
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 300;
 }
 
 a {

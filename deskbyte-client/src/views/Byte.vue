@@ -2,14 +2,21 @@
   <div class="byte">
     <div class="byte-info">
       <div class="byte-title">
-        <h1 v-if="isAdmin">Your Byte</h1>
-        <h1 v-else>{{ user.username }}'s Byte</h1>
+        <h2 v-if="isAdmin">Your Byte</h2>
+        <h2 v-else>{{ user.username }}'s Byte</h2>
       </div>
       <div class="byte-picture">
         <img src="../data/images/desk1.jpeg" class="image-main" alt="" />
       </div>
       <div class="byte-desc">
-        <p></p>
+        <div class="desc-category">
+          <li>description</li>
+          <p>This is my home setup, been working on it since 2019 and slowly improving it! Add a comment if you like it</p>
+        </div>
+        <div class="desc-category">
+          <li>equipment</li>
+          <p>Ezydox Keyboard, Ikea Standing Desk, Dell Screen, 13 inch MacBook Pro</p>
+        </div>
       </div>
     </div>
     <div class="byte-menu">
@@ -17,8 +24,8 @@
       <ul class="votes">
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[0] }" @click="upvoteCool()">
-            <img class="emoji" src="../assets/emojis/coolEmoji.png" />
             <li>Cool</li>
+            <img class="emoji" src="../assets/emojis/coolEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="cool"></div>
@@ -27,8 +34,8 @@
         </div>
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[1] }" @click="upvoteClean()">
-            <img class="emoji" src="../assets/emojis/broomEmoji.png" />
             <li>Clean</li>
+            <img class="emoji" src="../assets/emojis/broomEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="clean"></div>
@@ -37,8 +44,8 @@
         </div>
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[2] }" @click="upvoteCreative()">
-            <img class="emoji" src="../assets/emojis/creativeEmoji.png" />
             <li>Creative</li>
+            <img class="emoji" src="../assets/emojis/creativeEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="creative"></div>
@@ -47,8 +54,8 @@
         </div>
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[3] }" @click="upvoteOriginal()">
-            <img class="emoji" src="../assets/emojis/lightEmoji.png" />
             <li>Original</li>
+            <img class="emoji" src="../assets/emojis/lightEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="original"></div>
@@ -57,8 +64,8 @@
         </div>
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[4] }" @click="upvoteProductive()">
-            <img class="emoji" src="../assets/emojis/workEmoji.png" />
             <li>Productive</li>
+            <img class="emoji" src="../assets/emojis/workEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="productive"></div>
@@ -67,8 +74,8 @@
         </div>
         <div class="vote-category">
           <button class="vote-button" v-bind:class="{ inactive: !upvoteActive[5] }" @click="upvoteWow()">
-            <img class="emoji" src="../assets/emojis/mindblowEmoji.png" />
             <li>WOW</li>
+            <img class="emoji" src="../assets/emojis/mindblowEmoji.png" />
           </button>
           <div class="progress-container">
             <div class="progress-bar" :style="cssVars" id="wow"></div>
@@ -165,14 +172,25 @@ export default defineComponent({
     totalUpvotes(): number {
       return +Object.values(this.user.upvotes).reduce((a, b) => +a + +b);
     },
+    // percentage(): number[] {
+    //   return [
+    //     (this.user.upvotes.cool / this.totalUpvotes) * 100 +50,
+    //     (this.user.upvotes.clean / this.totalUpvotes) * 100 +50,
+    //     (this.user.upvotes.creative / this.totalUpvotes) * 100 +50,
+    //     (this.user.upvotes.original / this.totalUpvotes) * 100 +50,
+    //     (this.user.upvotes.productive / this.totalUpvotes) * 100 +50,
+    //     (this.user.upvotes.wow / this.totalUpvotes) * 100 +50,
+    //   ];
+    // },
+
     percentage(): number[] {
       return [
-        (this.user.upvotes.cool / this.totalUpvotes) * 100 +50,
-        (this.user.upvotes.clean / this.totalUpvotes) * 100 +50,
-        (this.user.upvotes.creative / this.totalUpvotes) * 100 +50,
-        (this.user.upvotes.original / this.totalUpvotes) * 100 +50,
-        (this.user.upvotes.productive / this.totalUpvotes) * 100 +50,
-        (this.user.upvotes.wow / this.totalUpvotes) * 100 +50,
+        (this.user.upvotes.cool / this.totalUpvotes) * 100 + 50,
+        (this.user.upvotes.clean / this.totalUpvotes) * 100 + 50,
+        (this.user.upvotes.creative / this.totalUpvotes) * 100 + 50,
+        (this.user.upvotes.original / this.totalUpvotes) * 100 + 50,
+        (this.user.upvotes.productive / this.totalUpvotes) * 100 + 50,
+        (this.user.upvotes.wow / this.totalUpvotes) * 100 + 50,
       ];
     },
     cssVars(): {} {
@@ -196,28 +214,45 @@ export default defineComponent({
   flex-direction: row;
   justify-content: space-between;
   width: 70%;
-  height: 100%;
+  // height: 100%;
 }
 
 .byte-info {
   width: 70%;
   margin: 1rem;
-  border: 2px solid $border-main;
+  border: 2px solid $db-navy;
   border-radius: 5px;
-  .byte-title {
-    margin: 1rem;
+  padding: 1rem;
+  .byte-desc {
+    .desc-category {
+      margin-bottom: 5px;
+    }
   }
 }
 
 .byte-menu {
   flex-direction: column;
   width: 30%;
+  height: auto;
   padding: 1rem;
   margin: 1rem;
-  border: 2px solid $border-main;
+  // border: 2px solid $border-main;
+  border: 2px solid $db-navy;
   border-radius: 5px;
   align-items: center;
   justify-content: center;
+}
+
+.byte-picture {
+  max-width: 100%;
+  margin: 2px 0px 2px 0px;
+  // margin: 1rem;
+  .image-main {
+    border-radius: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(202, 202, 202, 0.2);
+  }
 }
 
 .votes {
@@ -225,13 +260,15 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   .vote-category {
+    margin-bottom: 4px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   .vote-button {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     // margin-bottom: 0.1rem;
     // min-height: 2rem;
@@ -291,21 +328,15 @@ export default defineComponent({
     li {
       margin-bottom: 0.1rem;
     }
-  }
-}
-
-.byte-picture {
-  max-width: 100%;
-  margin: 1rem;
-  .image-main {
-    max-width: 100%;
-    max-height: 100%;
+    p {
+      font-size: 1.2rem;
+    }
   }
 }
 
 button {
   outline: none;
-  border: 2px solid $border-main;
+  border: 1.5px solid $db-navy;
   border-radius: 8px 0px 0px 8px;
   padding: 0.2rem;
   width: 9rem;
@@ -318,7 +349,7 @@ button {
   }
 }
 .inactive {
-  background-color: $border-main;
+  background-color: $db-navy;
   // transform: scale(1.03);
   li {
     font-weight: 600;
