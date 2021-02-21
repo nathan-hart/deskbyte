@@ -1,9 +1,9 @@
 export interface User {
-  name: String,
-  images: String[],
-  upvotes: {},
-  desctags: String[],
-  equipment: String[],
-  comments: String[],
-  isAdmin: Boolean,
+  name: string
+  images: string[]
+  upvotes: {}
+  desctags: string[]
+  equipment: string[]
+  comments: string[]
+  isAdmin: boolean
 }
